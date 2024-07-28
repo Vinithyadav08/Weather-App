@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-clear {
+  background: url("../assets/backgrounds/clear.jpg");
+}
+
+.bg-cloudy {
+  background: url("../assets/backgrounds/cloudy.jpg");
+}
+
+.bg-rainy {
+  background: url("../assets/backgrounds/rainy.jpg");
+}
+
+.bg-stormy {
+  background: url("../assets/backgrounds/stormy.jpg");
+}
+
+.bg-foggy {
+  background: url("../assets/backgrounds/foggy.jpg");
+}
+
+.bg-snowy {
+  background: url("../assets/backgrounds/snowy.jpg");
+}
+
+.bg-windy {
+  background: url("../assets/backgrounds/windy.jpg");
+}
+
+/* Ensure the background covers the entire card and doesn't repeat */
+.glassCard {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
