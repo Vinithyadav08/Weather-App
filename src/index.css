@@ -10,36 +10,11 @@
   box-sizing: border-box;
 }
 
-.bg-clear {
-  background: url("../assets/backgrounds/clear.jpg");
-}
-
-.bg-cloudy {
-  background: url("../assets/backgrounds/cloudy.jpg");
-}
-
-.bg-rainy {
-  background: url("../assets/backgrounds/rainy.jpg");
-}
-
-.bg-stormy {
-  background: url("../assets/backgrounds/stormy.jpg");
-}
-
-.bg-foggy {
-  background: url("../assets/backgrounds/foggy.jpg");
-}
-
-.bg-snowy {
-  background: url("../assets/backgrounds/snowy.jpg");
-}
-
-.bg-windy {
-  background: url("../assets/backgrounds/windy.jpg");
-}
-
-/* Ensure the background covers the entire card and doesn't repeat */
-.glassCard {
-  background-size: cover;
-  background-repeat: no-repeat;
+.glassCard{
+  background:  rgba(225,225,225,0.18);
+  box-shadow:  0 8px 32px 0 rgba(31,38,135,0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(225,225,225,0.18);
 }

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useStateContext } from "../Context";
-
+// images
 import Clear from "../assets/images/Clear.jpg";
 import Fog from "../assets/images/fog.png";
 import Cloudy from "../assets/images/Cloudy.jpg";
 import Rainy from "../assets/images/Rainy.jpg";
 import Snow from "../assets/images/snow.jpg";
 import Stormy from "../assets/images/Stormy.jpg";
-import Sunny from "../assets/images/Sunny.jpg";
+import Windy from "../assets/images/windy.jpg";
 
 const BackgroundLayout = () => {
   const { weather } = useStateContext();
@@ -15,25 +15,58 @@ const BackgroundLayout = () => {
 
   useEffect(() => {
     if (weather.conditions) {
-      let imageString = weather.conditions;
-      if (imageString.toLowerCase().includes("clear")) {
-        setImage(Clear);
-      } else if (imageString.toLowerCase().includes("cloud")) {
+      const imageString = weather.conditions.toLowerCase(); 
+
+
+      if (
+        
+        imageString.includes("snow") ||
+        imageString.includes("snow showers") ||
+        imageString.includes("light snow") ||
+        imageString.includes("heavy snow") ||
+        imageString.includes("sleet")
+      ) {
+        setImage(Snow);
+      } else if (
+        
+        imageString.includes("mostly clear") ||
+        imageString.includes("partially cloudy")
+      ) {
         setImage(Cloudy);
       } else if (
-        imageString.toLowerCase().includes("rain") ||
-        imageString.toLowerCase().includes("shower")
+        imageString.includes("rain") ||
+        imageString.includes("showers") ||
+        imageString.includes("drizzle") ||
+        imageString.includes("light rain") ||
+        imageString.includes("heavy rain")
       ) {
         setImage(Rainy);
-      } else if (imageString.toLowerCase().includes("snow")) {
-        setImage(Snow);
-      } else if (imageString.toLowerCase().includes("fog")) {
+      } else if (
+        imageString.includes("cloudy") ||
+        imageString.includes("mostly cloudy") ||
+        imageString.includes("overcast")
+      ) {
+        setImage(Cloudy);
+      } else if (
+        imageString.includes("fog") ||
+        imageString.includes("mist") ||
+        imageString.includes("haze")
+      ) {
         setImage(Fog);
       } else if (
-        imageString.toLowerCase().includes("thunder") ||
-        imageString.toLowerCase().includes("storm")
+        imageString.includes("thunderstorm") ||
+        imageString.includes("thunder") ||
+        imageString.includes("severe thunderstorm") ||
+        imageString.includes("lightning")
       ) {
         setImage(Stormy);
+      } else if (
+        imageString.includes("windy") ||
+        imageString.includes("breezy")
+      ) {
+        setImage(Windy);
+      } else {
+        setImage(Clear); // Default if no match
       }
     }
   }, [weather]);
